@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Website</title>
+<title>Kya Tum...?</title>
+<style>
+  body {
+    background: #ffdde1;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+  h1 { font-size: 38px; color: #d6336c; }
+  img { width: 200px; border-radius: 20px; }
+  button {
+    padding: 15px 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  #yes { background: #ff4d6d; color: white; }
+  #no { background: white; color: black; position: absolute; }
+  #msg { font-size: 26px; color: #d6336c; font-weight: bold; margin-top: 20px; display: none; }
+</style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Ye meri pehli website hai</p>
+
+<h1>Kya Tum Mujhse Pyaar Karti Ho? 🥺❤️</h1>
+<img src="https://media.tenor.com/8U5v8p2Yw2AAAAAC/cute-cat.gif">
+<br><br>
+
+<button id="yes" onclick="yesKiya()">YES 😍</button>
+<button id="no" onmouseover="bhagao()" onclick="bhagao()">NO 😏</button>
+
+<div id="msg">I knew it! I Love You Too! ❤️❤️❤️<br>Ab Screenshot lekar bhej do 😜</div>
+
+<script>
+function bhagao(){
+  let btn = document.getElementById("no");
+  let x = Math.random() * (window.innerWidth - 150);
+  let y = Math.random() * (window.innerHeight - 100);
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+function yesKiya(){
+  document.getElementById("msg").style.display = "block";
+  for(let i=0; i<50; i++){
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.top = "-20px";
+    heart.style.fontSize = "30px";
+    document.body.appendChild(heart);
+    setTimeout(()=>{ heart.style.transition="3s"; heart.style.top="100vh"; }, 100);
+  }
+}
+</script>
+
 </body>
 </html>
